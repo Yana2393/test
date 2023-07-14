@@ -1,3 +1,8 @@
+const input = document.getElementById("validation-input");
+const resultParagraph = document.createElement("p");
+const wrapperDiv = document.querySelector('.wrapp');
+
+
 function findFirstUniqueCharacter(text) {
   const words = text.split(" ");
 
@@ -24,13 +29,12 @@ function findFirstUniqueCharacter(text) {
   return null;
 }
 
-const input = document.getElementById("validation-input");
-
-const resultParagraph = document.createElement("p");
-document.body.appendChild(resultParagraph);
+wrapperDiv.appendChild(resultParagraph);
+resultParagraph.classList.add("result");
 
 input.addEventListener("input", function () {
   const text = input.value;
   const result = findFirstUniqueCharacter(text);
   resultParagraph.textContent = `Your unique symbol: ${result}`;
 });
+
